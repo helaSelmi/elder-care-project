@@ -1,0 +1,58 @@
+<section class="contact_section layout_padding">
+    <div class="container" style="margin-left: 375px;">
+        <div class="heading_container">
+            <h2 style="margin-left: 200px;">
+                Search Carer
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="form_container contact-form">
+                    <form [formGroup]="searchForm">
+                        <div>
+                            <input type="text" placeholder="Adress" formControlName="adress" />
+                        </div>
+                        <div>
+                            <label style="margin-left: 30px;"> Experience Between</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="number" placeholder="Experience" formControlName="intervaleOne" />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" placeholder="Experience" formControlName="intervaleTwo" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5" (click)="search()">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="carers != []" style="margin-top: 50px;">
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Adress</th>
+                    <th>Experience</th>
+                </tr>
+                <tr *ngFor="let elt of carers">
+                    <td>{{elt.firstName}}</td>
+                    <td>{{elt.lastName}}</td>
+                    <td>{{elt.email}}</td>
+                    <td>{{elt.telephone}}</td>
+                    <td>{{elt.adress}}</td>
+                    <td>{{elt.experience}}</td>
+                    <td>
+                        <button type="submit" class="btn btn-info" (click)="display(elt._id)">Display</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

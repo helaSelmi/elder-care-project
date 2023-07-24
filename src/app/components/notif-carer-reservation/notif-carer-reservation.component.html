@@ -1,0 +1,29 @@
+<div *ngIf="reservations!=[]">
+    <table class="table">
+        <tr style="color: #178066;">
+            <th>Status</th>
+            <th>Client Name</th>
+            <th>Adress</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let elt of reservations">
+            <td>{{elt.status}}</td>
+            <td>{{elt.idClient.firstName}} {{elt.idClient.lastName}}</td>
+            <td>{{elt.idClient.adress}}</td>
+            <td>{{elt.idClient.email}}</td>
+            <td>{{elt.idClient.telephone}}</td>
+            <td>
+                <button type="submit" class="btn btn-info" (click)="accept(elt)"
+                    *ngIf="elt.status!=status">Accept</button>
+                <button type="submit" class="btn btn-danger" (click)="refuse(elt)"
+                    *ngIf="elt.status!=status">Refuse</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div *ngIf="reservations==[]">
+    <p> There is no reservations</p>
+</div>

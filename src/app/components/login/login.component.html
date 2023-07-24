@@ -1,0 +1,55 @@
+<section class="contact_section layout_padding">
+    <div class="container" style="margin-left: 375px;">
+        <div class="heading_container">
+            <h2 style="margin-left: 200px;">
+                Login
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 ">
+                <div class="form_container contact-form">
+                    <form [formGroup]="loginForm">
+                        <div>
+                            <input type="text" placeholder="Email" formControlName="email" />
+                        </div>
+                        <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched 
+                    || loginForm.controls['email'].dirty)">
+                            <div *ngIf="loginForm.controls['email'].errors.email" class="red">
+                                Email must have a format email</div>
+                        </div>
+                        <h6 style="text-align: center;">OR</h6>
+
+                        <div>
+                            <input type="text" placeholder="Telephone" formControlName="telephone" />
+                        </div>
+                        <div *ngIf="loginForm.controls['telephone'].invalid && (loginForm.controls['telephone'].touched 
+                        || loginForm.controls['telephone'].dirty)">
+                            <div *ngIf="loginForm.controls['telephone'].errors.pattern" class="red">
+                                Telephone must have a 8 numbers</div>
+                        </div>
+
+                        <div>
+                            <input type="password" placeholder="Password" formControlName="password" />
+                        </div>
+                        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched 
+                    || loginForm.controls['password'].dirty)">
+                            <div *ngIf="loginForm.controls['password'].errors.required" class="red">
+                                Password is required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5" (click)="Login()">Login</button>
+                        </div>
+                        <span>{{errorMsg}}</span>
+
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="col-lg-6">
+                <div class="form-row">
+                    <img src="assets/images/formImg.jpg" alt="" style="height: 480px; width: 700px;">
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>

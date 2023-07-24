@@ -1,0 +1,74 @@
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2 style="margin-left: 90px;">
+                Inscription
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="form_container contact-form">
+                    <form [formGroup]="signupForm">
+                        <div>
+                            <input type="tel" placeholder="Telephone" formControlName="telephone" />
+                        </div>
+                        <div *ngIf="signupForm.controls['telephone'].invalid && (signupForm.controls['telephone'].touched 
+                            || signupForm.controls['telephone'].dirty)">
+                            <div *ngIf="signupForm.controls['telephone'].errors.required" class="red">
+                                Telephone is required</div>
+                            <div *ngIf="signupForm.controls['telephone'].errors.pattern" class="red">
+                                Telephone must have 8 numbers</div>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" formControlName="password" />
+                        </div>
+                        <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched 
+                        || signupForm.controls['password'].dirty)">
+                            <div *ngIf="signupForm.controls['password'].errors.required" class="red">
+                                Password is required</div>
+                            <div *ngIf="signupForm.controls['password'].errors.min" class="red">
+                                Password must have 10 numbers</div>
+                            <div *ngIf="signupForm.controls['password'].errors.max" class="red">
+                                Password must have 14 numbers</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-6">
+                                <div>
+                                    <input type="text" placeholder="First Name" formControlName="firstName" />
+                                </div>
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched 
+                            || signupForm.controls['firstName'].dirty)">
+                                <div *ngIf="signupForm.controls['firstName'].errors.required" class="red">
+                                    First Name is required</div>
+                                <div *ngIf="signupForm.controls['firstName'].errors.min" class="red">
+                                    First Name must have at least 3 chars</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div>
+                                    <input type="text" placeholder="Last Name" formControlName="lastName" />
+                                </div>
+
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched 
+                            || signupForm.controls['lastName'].dirty)">
+                                <div *ngIf="signupForm.controls['lastName'].errors.required" class="red">
+                                    Last Name is required</div>
+                                <div *ngIf="signupForm.controls['lastName'].errors.min" class="red">
+                                    Last Name must have at least 5 chars</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5"
+                                (click)="signup()">S'inscrire</button>
+                        </div>
+                        <span>{{msg}}</span>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

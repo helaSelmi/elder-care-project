@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <h4 style="color: red; margin-left: 800px;">{{number}} Users</h4>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Telephone</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let elt of users">
+                <td>{{elt._id}}</td>
+                <td>{{elt.telephone}}</td>
+                <td>{{elt.firstName}}</td>
+                <td>{{elt.lastName}}</td>
+
+                <td>
+                    <button type="submit" class="btn btn-info" (click)="goTomodifier(elt._id)">Modifier</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

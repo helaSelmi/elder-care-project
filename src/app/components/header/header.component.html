@@ -1,0 +1,68 @@
+<header class="header_section">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+                <span>
+                    Eldcare
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: gray;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="">Home </a>
+                    </li>
+                    <div class="dropdown" *ngIf="role!='client' || 'Carer' || 'admin'">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            SIGNUP
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="role!='client' && role!='Carer'&& role!='admin'" >
+                            <a   class="dropdown-item" routerLink="signupCarer">Signup Carer</a>
+                            <a   class="dropdown-item" routerLink="signupClient">Signup Client</a>
+                            <a   class="dropdown-item" routerLink="signupAdmin">Signup Admin</a>
+                          
+                        </div>
+                    </div>
+                    <li class="nav-item" *ngIf="!connectedUser" >
+                        <a class="nav-link" routerLink="connexion">Login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='admin'">
+                        <a class="nav-link" routerLink= "admin">Dashboard</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='client'">
+                        <a class="nav-link" routerLink="addPublication">Postulate</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='client'">
+                        <a class="nav-link" routerLink="editProfilClient">Edit Profil</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='Carer'">
+                        <a class="nav-link" routerLink="publications">Publications</a>
+                    </li>
+                  
+                    <li class="nav-item" *ngIf="role=='client'">
+                        <a class="nav-link" routerLink="reservationClient">Reservations</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='Carer'">
+                        <a class="nav-link" routerLink="reservationCarer">Reservations Carers</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='client'">
+                        <a class="nav-link" routerLink="publicationsClient">Confirmed
+                            Publications</a>
+                    </li>
+                    <li class="nav-item" *ngIf="role=='client'">
+                        <a class="nav-link" routerLink="searchCarer">Search Carer</a>
+                    </li>
+                    <li class="nav-item"  *ngIf="connectedUser" >
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

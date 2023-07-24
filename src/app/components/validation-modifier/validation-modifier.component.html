@@ -1,0 +1,29 @@
+<section class="contact_section layout_padding">
+    <div class="container" style="margin-left: 375px;">
+        <div class="heading_container">
+            <h2 style="margin-left: 200px;">
+                Modifier Utilisateur
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="form_container contact-form">
+                    <form #userForm="ngForm" (ngSubmit)="modifier()">
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Telephone"
+                                [ngModelOptions]="{standalone: true}" [(ngModel)]="user.telephone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nom"
+                                [ngModelOptions]="{standalone: true}" [(ngModel)]="user.firstName">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5">Modifier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

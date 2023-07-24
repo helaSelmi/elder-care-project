@@ -1,0 +1,26 @@
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let elt of clients">
+        <td>{{elt._id}}</td>
+        <td>{{elt.firstName}}</td>
+        <td>{{elt.lastName}}</td>
+        <td>{{elt.email}}</td>
+        <td>{{elt.telephone}}</td>
+        <td>{{elt.role}}</td>
+        <td>{{elt.status}}</td>
+        <td>
+            <button type="submit" class="btn btn-info" (click)="goToDisplay(elt._id)">Display</button>
+            <button type="submit" class="btn btn-warning" (click)="confirmStatus(elt._id)">Confirm</button>
+            <button type="submit" class="btn btn-danger" (click)="delete(elt._id)">Delete</button>
+        </td>
+    </tr>
+</table>

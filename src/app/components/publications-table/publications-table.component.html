@@ -1,0 +1,25 @@
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Case</th>
+        <th>ID Client</th>
+        <th>ID Carer</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let elt of publications">
+        <td>{{elt._id}}</td>
+        <td>{{elt.title}}</td>
+        <td>{{elt.description}}</td>
+        <td>{{elt.status}}</td>
+        <td>{{elt.case}}</td>
+        <td>{{elt.userId}}</td>
+        <td>{{elt.carerId}}</td>
+        <td>
+            <button type="submit" class="btn btn-warning" (click)="confirmStatus(elt._id)">Confirm</button>
+            <button type="submit" class="btn btn-danger" (click)="delete(elt._id)">Delete</button>
+        </td>
+    </tr>
+</table>

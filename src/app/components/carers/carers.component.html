@@ -1,0 +1,39 @@
+<section class="doctor_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Our Carers
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 mx-auto" *ngFor="let c of pageOfItems">
+                <div class="box" style="height: 500px;">
+                    <div class="img-box">
+                        <img [src]="c.avatar" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            {{c.firstName}} {{c.lastName}}
+                        </h5>
+                        <div class="row">
+                            <div class="col-lg-6 btn-box ">
+                                <a (click)="displayAllInfo(c._id)">
+                                    Display
+                                </a>
+                            </div>
+                            <div class="col-lg-6 btn-box">
+                                <a (click)="reserve(c._id)">
+                                    Reserve
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <jw-pagination [items]="carers" (changePage)="onChangePage($event)" [pageSize]="3"></jw-pagination>
+        </div>
+    </div>
+</section>

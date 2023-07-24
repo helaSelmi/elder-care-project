@@ -1,0 +1,23 @@
+<section class="about_section layout_padding">
+    <div class="container  ">
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="img-box">
+                    <img [src]="carer.avatar" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <div>
+                        <h3> {{carer.firstName}} {{carer.lastName}}</h3>
+                        <h5> {{carer.email}}</h5>
+                        <h5>{{carer.telephone}}</h5>
+                        <h5>{{carer.adress}}</h5>
+
+                    </div>
+                    <img [src]="carer.cv" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

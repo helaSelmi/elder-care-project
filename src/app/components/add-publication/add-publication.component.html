@@ -1,0 +1,40 @@
+<section class="contact_section layout_padding">
+    <div class="container" style="margin-left: 375px;">
+        <div class="heading_container">
+            <h2 style="margin-left: 115px;">
+                Add Publication
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="form_container contact-form">
+                    <form [formGroup]="addPublicationForm">
+                        <div>
+                            <input type="text" placeholder="Title" formControlName="title" />
+                        </div>
+                        <div *ngIf="addPublicationForm.controls['title'].invalid && (addPublicationForm.controls['title'].touched 
+                        || addPublicationForm.controls['title'].dirty)">
+                            <div *ngIf="addPublicationForm.controls['title'].errors.required" class="red">
+                                Title is required</div>
+                        </div>
+                        <div>
+                            <input class="message-box" name="Description" id="" cols="62" rows="5"
+                                placeholder="Description" formControlName="description" />
+                        </div>
+                        <div *ngIf="addPublicationForm.controls['description'].invalid && (addPublicationForm.controls['description'].touched 
+                        || addPublicationForm.controls['description'].dirty)">
+                            <div *ngIf="addPublicationForm.controls['description'].errors.required" class="red">
+                                Description is required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5"
+                                (click)="addPublication()">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

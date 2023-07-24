@@ -1,0 +1,68 @@
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2 style="margin-left: 160px;">
+                Signup admin
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 " style="margin-top: 20px;">
+                <div class="form_container contact-form">
+                    <form [formGroup]="signupAdminForm">
+                        <div>
+                            <input type="tel" placeholder="Telephone" formControlName="telephone" />
+                        </div>
+                        <div *ngIf="signupAdminForm.controls['telephone'].invalid && (signupAdminForm.controls['telephone'].touched 
+                            || signupAdminForm.controls['telephone'].dirty)">
+                            <div *ngIf="signupAdminForm.controls['telephone'].errors.required" class="red">
+                                Telephone is required</div>
+                            <div *ngIf="signupAdminForm.controls['telephone'].errors.pattern" class="red">
+                                Telephone must have 8 numbers</div>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" formControlName="email" />
+                        </div>
+                        <div *ngIf="signupAdminForm.controls['email'].invalid && (signupAdminForm.controls['email'].touched 
+                        || signupAdminForm.controls['email'].dirty)">
+                            <div *ngIf="signupAdminForm.controls['email'].errors.required" class="red">
+                                Email is required</div>
+                            <div *ngIf="signupAdminForm.controls['email'].errors.email" class="red">
+                                Email must have a format email</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-6">
+                                <div>
+                                    <input type="password" placeholder="Password" formControlName="password" />
+                                </div>
+                            </div>
+                            <div *ngIf="signupAdminForm.controls['password'].invalid && (signupAdminForm.controls['password'].touched 
+                        || signupAdminForm.controls['password'].dirty)">
+                                <div *ngIf="signupAdminForm.controls['password'].errors.required" class="red">
+                                    Password is required</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div>
+                                    <input type="password" placeholder="Confirm Password"
+                                        formControlName="confirmPassword" />
+                                </div>
+                            </div>
+                            <div *ngIf="signupAdminForm.controls['confirmPassword'].invalid && (signupAdminForm.controls['confirmPassword'].touched 
+                        || signupAdminForm.controls['confirmPassword'].dirty)">
+                                <div *ngIf="signupAdminForm.controls['confirmPassword'].errors.mustMatch" class="red">
+                                    Confirm Password does not mutch Password</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary py-3 px-5" (click)="signup()">Signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-row">
+                    <img src="assets/images/formImg.jpg" alt="" style="height: 300px; width: 700px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

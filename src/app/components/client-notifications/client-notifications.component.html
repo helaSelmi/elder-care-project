@@ -1,0 +1,18 @@
+<div>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Case</th>
+            <th>Carer Informations</th>
+        </tr>
+        <tr *ngFor="let elt of clientPubs">
+            <td>{{elt.title}}</td>
+            <td>{{elt.description}}</td>
+            <td>{{elt.case}}</td>
+            <td> <button type="submit" class="btn btn-info" (click)="goToCarerInfos(elt.carerId._id)"
+                    *ngIf="elt.case==case">Display</button>
+            </td>
+        </tr>
+    </table>
+</div>

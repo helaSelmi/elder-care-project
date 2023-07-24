@@ -1,0 +1,44 @@
+<section class="contact_section layout_padding">
+    <div class="container" style="margin-left: 375px;">
+        <div class="heading_container">
+            <h2 style="margin-left: 200px;">
+                Login
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="form_container contact-form">
+                    <form [formGroup]="loginForm">
+                        <div>
+                            <input type="tel" placeholder="Telephone" formControlName="telephone" />
+                        </div>
+                        <div *ngIf="loginForm.controls['telephone'].invalid && (loginForm.controls['telephone'].touched 
+                        || loginForm.controls['telephone'].dirty)">
+
+                            <div *ngIf="loginForm.controls['telephone'].errors.required" class="red">
+                                Telephone is required</div>
+                            <div *ngIf="loginForm.controls['telephone'].errors.pattern" class="red">
+                                Telephone must have a 8 numbers</div>
+                        </div>
+
+                        <div>
+                            <input type="password" placeholder="Password" formControlName="password" />
+                        </div>
+                        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched 
+                    || loginForm.controls['password'].dirty)">
+                            <div *ngIf="loginForm.controls['password'].errors.required" class="red">
+                                Password is required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary py-3 px-5" (click)="Login()">Login</button>
+                        </div>
+                        <span>{{errorMsg}}</span>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

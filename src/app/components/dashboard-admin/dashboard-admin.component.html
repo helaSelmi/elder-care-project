@@ -1,0 +1,46 @@
+<section class="department_section layout_padding">
+    <div class="department_container">
+        <div class="container ">
+            <div class="heading_container heading_center">
+                <h2>
+                    Dashboard Admin
+                </h2>
+            </div>
+            <div>
+                <ul class="nav nav-tabs" style="color: black;" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="admin-tab" data-toggle="tab" href="#admins" role="tab"
+                            aria-controls="admin" aria-selected="true">Admins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#matchs" role="tab"
+                            aria-controls="home" aria-selected="false">Accompagnants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#teams" role="tab"
+                            aria-controls="profile" aria-selected="false">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#players" role="tab"
+                            aria-controls="contact" aria-selected="false">Publications</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="admins" role="tabpanel" aria-labelledby="admins-tab">
+                        <app-admin-table></app-admin-table>
+                    </div>
+                    <div class="tab-pane fade" id="matchs" role="tabpanel" aria-labelledby="matchs-tab">
+                        <app-accompagnants-table></app-accompagnants-table>
+                    </div>
+                    <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
+                        <app-clients-table></app-clients-table>
+                    </div>
+                    <div class="tab-pane fade" id="players" role="tabpanel" aria-labelledby="players-tab">
+                        <app-publications-table></app-publications-table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
